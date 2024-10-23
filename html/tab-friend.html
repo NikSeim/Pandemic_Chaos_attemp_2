@@ -13,37 +13,44 @@
         
         <div class="invite-container">   
             <div class="invite-box">
-                <img src="../Images/friends-img/gift-icon.webp" alt="Gift" class="gift-image">
+                <img src="gift-icon.webp" alt="Gift" class="gift-image">
                 <div class="invite-text">
                     <p class="invite-title">Invite friends</p>
                     <p class="invite-bonus">
-                        <img src="../Images/index/people_img.webp" alt="People" class="people-icon">
+                        <img src="people_img.webp" alt="People" class="people-icon">
                         <span class="bonus-amount">+5,000</span> For you and your Friends
                     </p>
                 </div>
             </div>
         </div>
-    
+
         <div class="extra-buttons">
             <!-- Кнопка для отправки приглашения по Телеграм -->
             <a href="https://t.me/share/url?url=https://t.me/ldfbhuibf_bot Привет! Присоединяйся ко мне в этом приложении и получай бонусы!" target="_blank">
                 <button class="long-button">
                     Invite friends
-                    <img src="../Images/friends-img/invite-img.webp" alt="Invite" class="invite-icon">
+                    <img src="invite-img.webp" alt="Invite" class="invite-icon">
                 </button>
             </a>
-    
+
             <!-- Кнопка для копирования реферальной ссылки -->
             <button id="copy-button" class="long-button">
                 Copy Referral Link
-                <img src="../Images/friends-img/invite-img.webp" alt="Copy" class="invite-icon">
+                <img src="invite-img.webp" alt="Copy" class="invite-icon">
             </button>
         </div>
-    
+
         <!-- Оповещение о копировании -->
         <div id="copy-notification">Ссылка скопирована!</div>
+
+        <!-- Список приглашённых друзей -->
+        <div class="friends-list">
+            <h2>Ваши приглашённые друзья:</h2>
+            <ul id="friends-list">
+                <!-- Здесь будет динамически генерироваться список друзей -->
+            </ul>
+        </div>
     </div>
-    
     
     <script src="../js/tab-friend.js"></script>
 </body>

@@ -14,7 +14,7 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     }
 
-    // Проверяем наличие элемента   
+    // Проверяем наличие элемента
     if (coinCounterElement) {
         // Обновляем количество монет сразу после загрузки
         updateCoins();

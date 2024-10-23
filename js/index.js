@@ -1,5 +1,3 @@
-// index.js
-
 // Объявляем переменные в глобальной области видимости
 let profitPerTap = 1;     // Прибыль за клик
 let hourlyProfit = 3600;  // Часовая прибыль
@@ -18,6 +16,86 @@ let isTurboActive = false;
 let turboBoosterEndTime = 0;
 let turboIntervalId = null; // Переменная для хранения ID интервала
 let turboTimerElement; // Элемент для отображения обратного отсчета
+
+// Функция для показа модального окна из iframe
+window.showModalFromIframe = function (data) {
+    const modal = document.querySelector('.modal-window');
+    const overlay = document.querySelector('.modal-overlay');
+
+    // Проверяем, существует ли ID
+    if (!data.id) {
+        console.error('ID карточки не передан в функцию showModalFromIframe.');
+        return;
+    }
+
+    const modalImage = modal.querySelector('.modal-image');
+    const modalTitle = modal.querySelector('.modal-title');
+    const modalDescription = modal.querySelector('.modal-description');
+    const modalProfit = modal.querySelector('.modal-profit');
+    const modalPrice = modal.querySelector('.modal-price');
+
+    // Устанавливаем данные в модальное окно
+    modalImage.src = data.image || '';  // Устанавливаем источник изображения
+    modalTitle.textContent = data.name || 'Название не указано';
+    modalDescription.textContent = data.description || 'Описание отсутствует';
+    modalProfit.textContent = `+${data.profit || 0}`;
+    modalPrice.textContent = `${data.price || 0}`;
+
+    // Сохраняем текущую карточку для обновления данных
+    modal.dataset.cardId = data.id;
+
+    // Добавляем класс для показа окна с анимацией
+    modal.classList.add('show');
+    modal.classList.remove('hide');
+    overlay.style.display = 'block';
+
+    console.log('Модальное окно показано с данными:', data);
+};
+
+// Функция для закрытия модального окна
+function closeModal() {
+    const modal = document.querySelector('.modal-window');
+    const overlay = document.querySelector('.modal-overlay');
+
+    // Добавляем класс для скрытия окна с анимацией
+    modal.classList.add('hide');
+    modal.classList.remove('show');
+
+    // Скроем overlay с задержкой, чтобы завершилась анимация
+    setTimeout(() => {
+        overlay.style.display = 'none';
+    }, 500); // Время совпадает с длительностью анимации
+}
+
+document.querySelector('.close-btn').addEventListener('click', closeModal);
+
+// Закрытие модального окна при клике на overlay
+document.querySelector('.modal-overlay').addEventListener('click', closeModal);
+
+// Логика для кнопки "Купить" в модальном окне
+document.querySelector('.buy-btn').addEventListener('click', function () {
+    const modal = document.querySelector('.modal-window');
+    const cardId = modal.dataset.cardId;
+
+    // Проверяем, что ID карточки существует
+    if (!cardId) {
+        console.error('Не удалось найти ID карточки в модальном окне.');
+        return;
+    }
+
+    // Отправляем сообщение в iframe для обновления уровня карточки
+    const iframe = document.querySelector('iframe'); // Убедитесь, что выбираете правильный iframe
+    if (iframe && iframe.contentWindow) {
+        iframe.contentWindow.postMessage({ action: 'updateCardLevel', cardId: cardId }, '*');
+        console.log(`Отправлено сообщение в iframe для обновления уровня карточки с ID ${cardId}`);
+    } else {
+        console.error('Iframe не найден или нет доступа к его contentWindow.');
+        return;
+    }
+
+    // Закрываем модальное окно после отправки сообщения
+    closeModal();
+});
 
 // Функция для загрузки активных бустеров
 function loadActiveBoosters() {
@@ -45,7 +123,7 @@ function loadActiveBoosters() {
 
 // Функция для запуска таймера бустера "turbo"
 function startTurboBoosterTimer() {
-    const fixedTimeInSeconds = 30;  // Фиксированное время 30 секунд
+    const fixedTimeInSeconds = 30;  // Время действия бустера — 30 секунд
 
     // Проверяем, сохранено ли время окончания в localStorage
     const savedEndTime = localStorage.getItem('turboBoosterEndTime');
@@ -55,7 +133,7 @@ function startTurboBoosterTimer() {
         // Если время окончания сохранено и еще не истекло, продолжаем с оставшегося времени
         turboBoosterEndTime = parseInt(savedEndTime, 10);
     } else {
-        // Иначе устанавливаем новое время окончания и сохраняем в localStorage
+        // Устанавливаем новое время окончания и сохраняем в localStorage
         turboBoosterEndTime = now + fixedTimeInSeconds * 1000;
         localStorage.setItem('turboBoosterEndTime', turboBoosterEndTime);
     }
@@ -75,6 +153,7 @@ function startTurboBoosterTimer() {
         if (now >= turboBoosterEndTime) {
             isTurboActive = false;
             clearInterval(turboIntervalId);  // Останавливаем таймер
+            localStorage.removeItem('turboBoosterEndTime');  // Удаляем время окончания из localStorage
             turboTimerElement.style.display = 'none';  // Скрываем таймер после завершения
             hideVideoBackground();  // Скрываем видео после завершения
         } else {
@@ -83,7 +162,6 @@ function startTurboBoosterTimer() {
     }, 1000);
 }
 
-
 // Функция для обновления обратного отсчета таймера бустера "turbo"
 function updateTurboTimerDisplay() {
     const remainingTime = Math.max(0, Math.floor((turboBoosterEndTime - Date.now()) / 1000));
@@ -91,11 +169,6 @@ function updateTurboTimerDisplay() {
     const seconds = remainingTime % 60;
     turboTimerElement.textContent = `${minutes}:${seconds < 10 ? '0' : ''}${seconds}`;
 }
-
-
-
-
-
 
 // Функции для показа и скрытия видеофона
 function showVideoBackground() {
@@ -108,9 +181,10 @@ function showVideoBackground() {
 function hideVideoBackground() {
     const videoContainer = document.getElementById('video-background-container');
     if (videoContainer) {
-        videoContainer.style.display = 'none';
+        videoContainer.style.display = 'none'; // Скрываем видео
     }
 }
+
 
 // Запуск при загрузке страницы
 document.addEventListener('DOMContentLoaded', function () {
