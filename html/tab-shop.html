@@ -1,0 +1,876 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Booster Page</title>
+    <link rel="stylesheet" href="../css/tab-shop.css"> <!-- Путь к CSS -->
+</head>
+<body>
+
+    <div class="coin-info">
+        <div>Ваши монеты: <span id="coin-counter">0</span></div>
+    </div>
+
+    <!-- Верхнее меню с вкладками -->
+    <div class="tab-bar">
+        <button class="tab-button active" data-section="falling-fortune">Tab 1</button>
+        <button class="tab-button" data-section="tap-n-grab">Tab 2</button>
+        <button class="tab-button" data-section="memory-grid">Tab 3</button>
+        <button class="tab-button" data-section="monster-strike">Tab 4</button>
+    </div>
+
+    <!-- Первая вкладка (объекты 1-10) -->
+    <!-- Первая вкладка (объекты 1-17) -->
+<!-- Первая вкладка (объекты 1-17) -->
+<!-- Первая вкладка (объекты 1-17) -->
+    <div id="falling-fortune" class="section active">
+    <h2 class="general-title">Falling Fortune</h2>
+    <div class="container-grid">
+        <!-- Объекты с 1 по 17 -->
+        <div class="rect-card" data-id="1" data-lock="unlock" data-name="Чихание" data-description="Вирус вызывает сильное раздражение слизистых оболочек, провоцируя резкий выброс мельчайших капель слизи и вирусных частиц." data-lvl="0" data-price="400" data-profit="3600" data-image="./Images/shop-tab-airborne/sneeze.webp">
+            <img src="../Images/shop-tab-airborne/sneeze.webp" alt="Image 1" class="rect-image">
+            <div class="card-name">Чихание</div>
+            <div class="card-profits">
+                <div class="carb-profit">Profit per hour</div>
+                <img src="../Images/index/people_img.webp" alt="">
+                <div class="profit-number"></div>
+            </div>
+            <div class="card-line"></div>
+            <div class="rect-bottom">
+                <div class="rect-info lvl" id="lvl">LvL</div>
+                <div class="horizontal-line"></div>
+                <div class="rect-info price" id="price">400</div>
+                <img src="../Images/index/people_img.webp" class="image-right" id="imageRight" alt="">
+            </div>
+        </div>
+
+        <div class="rect-card" data-id="2" data-lock="unlock" data-name="Кашель" data-description="Вирус вызывает кашель, при котором из дыхательных путей выбрасываются капли, содержащие вирусные частицы." data-lvl="0" data-price="200" data-profit="20" data-image="./Images/shop-tab-airborne/cough.webp">
+            <img src="../Images/shop-tab-airborne/cough.webp" alt="Image 2" class="rect-image">
+            <div class="card-name">Кашель</div>
+            <div class="card-profits">
+                <div class="carb-profit">Profit per hour</div>
+                <img src="../Images/index/people_img.webp" alt="">
+                <div class="profit-number"></div>
+            </div>
+            <div class="card-line"></div>
+            <div class="rect-bottom">
+                <div class="rect-info lvl" id="lvl">LvL</div>
+                <div class="horizontal-line"></div>
+                <div class="rect-info price" id="price">200</div>
+                <img src="../Images/index/people_img.webp" class="image-right" id="imageRight" alt="">
+            </div>
+        </div>
+
+        <div class="rect-card" data-id="3" data-lock="Чихание lvl 5" data-name="Инфекционный дыхательный пузырь" data-description="Вирус формирует стабильные пузырьки, повышая устойчивость к внешним факторам." data-lvl="0" data-price="300" data-profit="30" data-image="./Images/shop-tab-airborne/intensive-transmission.webp">
+            <img src="../Images/shop-tab-airborne/intensive-transmission.webp" alt="Image 3" class="rect-image">
+            <div class="card-name">Инфекционный дыхательный пузырь</div>
+            <div class="card-profits">
+                <div class="carb-profit">Profit per hour</div>
+                <img src="../Images/index/people_img.webp" alt="">
+                <div class="profit-number"></div>
+            </div>
+            <div class="card-line"></div>
+            <div class="rect-bottom">
+                <div class="rect-info lvl" id="lvl">LvL</div>
+                <div class="horizontal-line"></div>
+                <div class="rect-info price" id="price">300</div>
+                <img src="../Images/index/people_img.webp" class="image-right" id="imageRight" alt="">
+            </div>
+        </div>
+
+        <div class="rect-card" data-id="4" data-lock="Устойчивость к холоду lvl 7" data-name="Иммунная маскировка" data-description="Вирус развивает способность скрываться от иммунной системы, увеличивая продолжительность инфекции." data-lvl="0" data-price="400" data-profit="40" data-image="./Images/shop-tab-airborne/immune-camouflage.webp">
+            <img src="../Images/shop-tab-airborne/immune-camouflage.webp" alt="Image 4" class="rect-image">
+            <div class="card-name">Иммунная маскировка</div>
+            <div class="card-profits">
+                <div class="carb-profit">Profit per hour</div>
+                <img src="../Images/index/people_img.webp" alt="">
+                <div class="profit-number"></div>
+            </div>
+            <div class="card-line"></div>
+            <div class="rect-bottom">
+                <div class="rect-info lvl" id="lvl">LvL</div>
+                <div class="horizontal-line"></div>
+                <div class="rect-info price" id="price">400</div>
+                <img src="../Images/index/people_img.webp" class="image-right" id="imageRight" alt="">
+            </div>
+        </div>
+
+        <div class="rect-card" data-id="5" data-lock="Микрокапли lvl 7" data-name="Аэрозоли" data-description="Вирус удерживается в воздухе в виде мелких частиц, что позволяет ему оставаться активным и заразным дольше." data-lvl="0" data-price="500" data-profit="50" data-image="./Images/shop-tab-airborne/micro-drip.webp">
+            <img src="../Images/shop-tab-airborne/micro-drip.webp" alt="Image 5" class="rect-image">
+            <div class="card-name">Аэрозоли</div>
+            <div class="card-profits">
+                <div class="carb-profit">Profit per hour</div>
+                <img src="../Images/index/people_img.webp" alt="">
+                <div class="profit-number"></div>
+            </div>
+            <div class="card-line"></div>
+            <div class="rect-bottom">
+                <div class="rect-info lvl" id="lvl">LvL</div>
+                <div class="horizontal-line"></div>
+                <div class="rect-info price" id="price">500</div>
+                <img src="../Images/index/people_img.webp" class="image-right" id="imageRight" alt="">
+            </div>
+        </div>
+
+        <div class="rect-card" data-id="6" data-lock="Агрегированная инфекция lvl 5" data-name="Устойчивость к холоду" data-description="Вирус активируется в условиях низкой температуры, легко распространяется в холодном климате." data-lvl="0" data-price="600" data-profit="60" data-image="./Images/shop-tab-airborne/weather-resistance.webp">
+            <img src="../Images/shop-tab-airborne/weather-resistance.webp" alt="Image 6" class="rect-image">
+            <div class="card-name">Устойчивость к холоду</div>
+            <div class="card-profits">
+                <div class="carb-profit">Profit per hour</div>
+                <img src="../Images/index/people_img.webp" alt="">
+                <div class="profit-number"></div>
+            </div>
+            <div class="card-line"></div>
+            <div class="rect-bottom">
+                <div class="rect-info lvl" id="lvl">LvL</div>
+                <div class="horizontal-line"></div>
+                <div class="rect-info price" id="price">600</div>
+                <img src="../Images/index/people_img.webp" class="image-right" id="imageRight" alt="">
+            </div>
+        </div>
+
+        <div class="rect-card" data-id="7" data-lock="Быстрая диффузия lvl 6" data-name="Агрегированная инфекция" data-description="Вирус способен объединяться в большие скопления для более эффективного заражения." data-lvl="0" data-price="700" data-profit="70" data-image="./Images/shop-tab-airborne/immune-camouflage.webp">
+            <img src="../Images/shop-tab-airborne/immune-camouflage.webp" alt="Image 7" class="rect-image">
+            <div class="card-name">Агрегированная инфекция</div>
+            <div class="card-profits">
+                <div class="carb-profit">Profit per hour</div>
+                <img src="../Images/index/people_img.webp" alt="">
+                <div class="profit-number"></div>
+            </div>
+            <div class="card-line"></div>
+            <div class="rect-bottom">
+                <div class="rect-info lvl" id="lvl">LvL</div>
+                <div class="horizontal-line"></div>
+                <div class="rect-info price" id="price">700</div>
+                <img src="../Images/index/people_img.webp" class="image-right" id="imageRight" alt="">
+            </div>
+        </div>
+
+        <div class="rect-card" data-id="8" data-lock="Инфекционный дыхательный пузырь lvl 7" data-name="Быстрая диффузия" data-description="Увеличивает скорость распространения вируса по воздуху." data-lvl="0" data-price="800" data-profit="80" data-image="./Images/shop-tab-airborne/weather-resistance.webp">
+            <img src="../Images/shop-tab-airborne/weather-resistance.webp" alt="Image 8" class="rect-image">
+            <div class="card-name">Быстрая диффузия</div>
+            <div class="card-profits">
+                <div class="carb-profit">Profit per hour</div>
+                <img src="../Images/index/people_img.webp" alt="">
+                <div class="profit-number"></div>
+            </div>
+            <div class="card-line"></div>
+            <div class="rect-bottom">
+                <div class="rect-info lvl" id="lvl">LvL</div>
+                <div class="horizontal-line"></div>
+                <div class="rect-info price" id="price">800</div>
+                <img src="../Images/index/people_img.webp" class="image-right" id="imageRight" alt="">
+            </div>
+        </div>
+
+        <div class="rect-card" data-id="9" data-lock="Кашель lvl 4" data-name="Микрокапли" data-description="Максимальная эффективность воздушного распространения через мельчайшие капли жидкости." data-lvl="0" data-price="900" data-profit="90" data-image="./Images/shop-tab-airborne/aggregated-infection.webp">
+            <img src="../Images/shop-tab-airborne/aggregated-infection.webp" alt="Image 9" class="rect-image">
+            <div class="card-name">Микрокапли</div>
+            <div class="card-profits">
+                <div class="carb-profit">Profit per hour</div>
+                <img src="../Images/index/people_img.webp" alt="">
+                <div class="profit-number"></div>
+            </div>
+            <div class="card-line"></div>
+            <div class="rect-bottom">
+                <div class="rect-info lvl" id="lvl">LvL</div>
+                <div class="horizontal-line"></div>
+                <div class="rect-info price" id="price">900</div>
+                <img src="../Images/index/people_img.webp" class="image-right" id="imageRight" alt="">
+            </div>
+        </div>
+
+        <div class="rect-card" data-id="10" data-lock="Аэростатическая инфекция lvl 9" data-name="Гиперактивная репликация" data-description="Вирус увеличивает скорость размножения внутри клеток хозяина, что приводит к более быстрому накоплению вирусных частиц и ускоренному распространению инфекции в организме." data-lvl="0" data-price="1000" data-profit="100" data-image="./Images/shop-tab-airborne/hyperactive-replication.webp">
+            <img src="../Images/shop-tab-airborne/hyperactive-replication.webp" alt="Image 10" class="rect-image">
+            <div class="card-name">Гиперактивная репликация</div>
+            <div class="card-profits">
+                <div class="carb-profit">Profit per hour</div>
+                <img src="../Images/index/people_img.webp" alt="">
+                <div class="profit-number"></div>
+            </div>
+            <div class="card-line"></div>
+            <div class="rect-bottom">
+                <div class="rect-info lvl" id="lvl">LvL</div>
+                <div class="horizontal-line"></div>
+                <div class="rect-info price" id="price">1000</div>
+                <img src="../Images/index/people_img.webp" class="image-right" id="imageRight" alt="">
+            </div>
+        </div>
+
+        <div class="rect-card" data-id="11" data-lock="Иммунная маскировка lvl 7" data-name="Техногенно-воздушная адаптация" data-description="Вирус эффективно распространяется в условиях сильного загрязнения воздуха, используя частицы смога как переносчики." data-lvl="0" data-price="1100" data-profit="110" data-image="./Images/shop-tab-airborne/techno_air_adaptation.webp">
+            <img src="../Images/shop-tab-airborne/techno_air_adaptation.webp" alt="Image 11" class="rect-image">
+            <div class="card-name">Техногенно-воздушная адаптация</div>
+            <div class="card-profits">
+                <div class="carb-profit">Profit per hour</div>
+                <img src="../Images/index/people_img.webp" alt="">
+                <div class="profit-number"></div>
+            </div>
+            <div class="card-line"></div>
+            <div class="rect-bottom">
+                <div class="rect-info lvl" id="lvl">LvL</div>
+                <div class="horizontal-line"></div>
+                <div class="rect-info price" id="price">1100</div>
+                <img src="../Images/index/people_img.webp" class="image-right" id="imageRight" alt="">
+            </div>
+        </div>
+
+        <div class="rect-card" data-id="12" data-lock="Агрегированная инфекция lvl 7" data-name="Аэростатическая инфекция" data-description="Вирус распространяется через микрочастицы, которые могут зависать в воздухе продолжительное время." data-lvl="0" data-price="1200" data-profit="120" data-image="./Images/shop-tab-airborne/aerostatic_infection.webp">
+            <img src="../Images/shop-tab-airborne/aerostatic_infection.webp" alt="Image 12" class="rect-image">
+            <div class="card-name">Аэростатическая инфекция</div>
+            <div class="card-profits">
+                <div class="carb-profit">Profit per hour</div>
+                <img src="../Images/index/people_img.webp" alt="">
+                <div class="profit-number"></div>
+            </div>
+            <div class="card-line"></div>
+            <div class="rect-bottom">
+                <div class="rect-info lvl" id="lvl">LvL</div>
+                <div class="horizontal-line"></div>
+                <div class="rect-info price" id="price">1200</div>
+                <img src="../Images/index/people_img.webp" class="image-right" id="imageRight" alt="">
+            </div>
+        </div>
+
+        <div class="rect-card" data-id="13" data-lock="Наноаэрозоли lvl 7" data-name="Контактное заражение" data-description="Повышается вероятность заражения через предметы, которые использовал уже заражённый человек." data-lvl="0" data-price="1300" data-profit="130" data-image="./Images/shop-tab-airborne/contact_infection.webp">
+            <img src="../Images/shop-tab-airborne/contact_infection.webp" alt="Image 13" class="rect-image">
+            <div class="card-name">Контактное заражение</div>
+            <div class="card-profits">
+                <div class="carb-profit">Profit per hour</div>
+                <img src="../Images/index/people_img.webp" alt="">
+                <div class="profit-number"></div>
+            </div>
+            <div class="card-line"></div>
+            <div class="rect-bottom">
+                <div class="rect-info lvl" id="lvl">LvL</div>
+                <div class="horizontal-line"></div>
+                <div class="rect-info price" id="price">1300</div>
+                <img src="../Images/index/people_img.webp" class="image-right" id="imageRight" alt="">
+            </div>
+        </div>
+
+        <div class="rect-card" data-id="14" data-lock="Техногенно-воздушная адаптация lvl 8" data-name="Лекарственная адаптация" data-description="Вирус развивает устойчивость к распространённым противовирусным препаратам, что значительно усложняет лечение и позволяет инфекции дольше сохраняться в организме." data-lvl="0" data-price="1400" data-profit="140" data-image="./Images/shop-tab-airborne/medicinal_adaptation.webp">
+            <img src="../Images/shop-tab-airborne/medicinal_adaptation.webp" alt="Image 14" class="rect-image">
+            <div class="card-name">Лекарственная адаптация</div>
+            <div class="card-profits">
+                <div class="carb-profit">Profit per hour</div>
+                <img src="../Images/index/people_img.webp" alt="">
+                <div class="profit-number"></div>
+            </div>
+            <div class="card-line"></div>
+            <div class="rect-bottom">
+                <div class="rect-info lvl" id="lvl">LvL</div>
+                <div class="horizontal-line"></div>
+                <div class="rect-info price" id="price">1400</div>
+                <img src="../Images/index/people_img.webp" class="image-right" id="imageRight" alt="">
+            </div>
+        </div>
+
+        <div class="rect-card" data-id="15" data-lock="Лекарственная адаптация lvl 6" data-name="Иммуно Направленное заражение" data-description="Вирус направляется на уже заражённых другим вирусом людей и к людям с ослабленным иммунитетом." data-lvl="0" data-price="1500" data-profit="150" data-image="./Images/shop-tab-airborne/immuno_targeted_infection.webp">
+            <img src="../Images/shop-tab-airborne/immuno_targeted_infection.webp" alt="Image 15" class="rect-image">
+            <div class="card-name">Иммуно Направленное заражение</div>
+            <div class="card-profits">
+                <div class="carb-profit">Profit per hour</div>
+                <img src="../Images/index/people_img.webp" alt="">
+                <div class="profit-number"></div>
+            </div>
+            <div class="card-line"></div>
+            <div class="rect-bottom">
+                <div class="rect-info lvl" id="lvl">LvL</div>  
+                <div class="horizontal-line"></div>
+                <div class="rect-info price" id="price">1500</div>
+                <img src="../Images/index/people_img.webp" class="image-right" id="imageRight" alt="">
+            </div>
+        </div>
+
+        <div class="rect-card" data-id="16" data-lock="Контактное заражение lvl 9" data-name="Промежуточное заражение" data-description="Вирус способен переноситься через полностью здоровых людей или через людей с высоким иммунитетом на более слабых." data-lvl="0" data-price="1600" data-profit="160" data-image="./Images/shop-tab-airborne/intermediate_infection.webp">
+            <img src="../Images/shop-tab-airborne/intermediate_infection.webp" alt="Image 16" class="rect-image">
+            <div class="card-name">Промежуточное заражение</div>
+            <div class="card-profits">
+                <div class="carb-profit">Profit per hour</div>
+                <img src="../Images/index/people_img.webp" alt="">
+                <div class="profit-number"></div>
+            </div>
+            <div class="card-line"></div>
+            <div class="rect-bottom">
+                <div class="rect-info lvl" id="lvl">LvL</div>
+                <div class="horizontal-line"></div>
+                <div class="rect-info price" id="price">1600</div>
+                <img src="../Images/index/people_img.webp" class="image-right" id="imageRight" alt="">
+            </div>
+        </div>
+
+        <div class="rect-card" data-id="17" data-lock="all lvl 10" data-name="Эволюционная адаптация" data-description="Вирус адаптируется к различным климатическим условиям, повышая общую эффективность распространения." data-lvl="0" data-price="1700" data-profit="170" data-image="./Images/shop-tab-airborne/evolutionary-adaptation.webp">
+            <img src="../Images/shop-tab-airborne/evolutionary-adaptation.webp" alt="Image 17" class="rect-image">
+            <div class="card-name">Эволюционная адаптация</div>
+            <div class="card-profits">
+                <div class="carb-profit">Profit per hour</div>
+                <img src="../Images/index/people_img.webp" alt="">
+                <div class="profit-number"></div>
+            </div>
+            <div class="card-line"></div>
+            <div class="rect-bottom">
+                <div class="rect-info lvl" id="lvl">LvL</div>
+                <div class="horizontal-line"></div>
+                <div class="rect-info price" id="price">1700</div>
+                <img src="../Images/index/people_img.webp" class="image-right" id="imageRight" alt="">
+            </div>
+        </div>
+
+        <div class="rect-card" data-id="18" data-lock="Аэрозоли lvl 8" data-name="Наноаэрозоли" data-description="Уменьшает размер капель, позволяя вирусу проникать глубже в дыхательные пути." data-lvl="0" data-price="1700" data-profit="170" data-image="./Images/shop-tab-airborne/evolutionary-adaptation.webp">
+            <img src="../Images/shop-tab-airborne/evolutionary-adaptation.webp" alt="Image 17" class="rect-image">
+            <div class="card-name">Наноаэрозоли</div>
+            <div class="card-profits">
+                <div class="carb-profit">Profit per hour</div>
+                <img src="../Images/index/people_img.webp" alt="">
+                <div class="profit-number"></div>
+            </div>
+            <div class="card-line"></div>
+            <div class="rect-bottom">
+                <div class="rect-info lvl" id="lvl">LvL</div>
+                <div class="horizontal-line"></div>
+                <div class="rect-info price" id="price">1700</div>
+                <img src="../Images/index/people_img.webp" class="image-right" id="imageRight" alt="">
+            </div>
+        </div>
+    </div>
+    </div>
+
+
+
+    <!-- Вторая вкладка (объекты 11-20) -->
+    <div id="tap-n-grab" class="section" style="display: none;">
+        <h2 class="general-title">Tap 'n' Grab</h2>
+        <div class="container-grid">
+            <!-- Объекты с 11 по 20 -->
+            <div class="rect-card" data-id="11" data-name="Item Eleven" data-description="Eleventh item description" data-lvl="11" data-price="1100" data-profit="110" data-image="./Images/plague_sign.png">
+                <img src="../Images/index/people_img.webp" alt="Image 11" class="rect-image">
+                <div class="card-name">Item Eleven</div>
+                <div class="card-profits">
+                    <div class="carb-profit">Profit per hour</div>
+                    <img src="../Images/index/people_img.webp" alt="">
+                    <div class="profit-number">11000000</div>
+                </div>
+                <div class="card-line"></div>
+                <div class="rect-bottom">
+                    <div class="rect-info lvl" id="lvl">LvL 11</div>
+                    <div class="horizontal-line"></div>
+                    <div class="rect-info price" id="price">Price: 1100</div>
+                    <img src="../Images/index/people_img.webp" alt="">
+                </div>
+            </div>
+
+            <div class="rect-card" data-id="12" data-name="Item Twelve" data-description="Twelfth item description" data-lvl="12" data-price="1200" data-profit="120" data-image="./Images/plague_sign.png">
+                <img src="../Images/index/people_img.webp" alt="Image 12" class="rect-image">
+                <div class="card-name">Item Twelve</div>
+                <div class="card-profits">
+                    <div class="carb-profit">Profit per hour</div>
+                    <img src="../Images/index/people_img.webp" alt="">
+                    <div class="profit-number">12000000</div>
+                </div>
+                <div class="card-line"></div>
+                <div class="rect-bottom">
+                    <div class="rect-info lvl" id="lvl">LvL 12</div>
+                    <div class="horizontal-line"></div>
+                    <div class="rect-info price" id="price">Price: 1200</div>
+                    <img src="../Images/index/people_img.webp" alt="">
+                </div>
+            </div>
+
+            <div class="rect-card" data-id="13" data-name="Item Thirteen" data-description="Thirteenth item description" data-lvl="13" data-price="1300" data-profit="130" data-image="./Images/plague_sign.png">
+                <img src="../Images/index/people_img.webp" alt="Image 13" class="rect-image">
+                <div class="card-name">Item Thirteen</div>
+                <div class="card-profits">
+                    <div class="carb-profit">Profit per hour</div>
+                    <img src="../Images/index/people_img.webp" alt="">
+                    <div class="profit-number">13000000</div>
+                </div>
+                <div class="card-line"></div>
+                <div class="rect-bottom">
+                    <div class="rect-info lvl" id="lvl">LvL 13</div>
+                    <div class="horizontal-line"></div>
+                    <div class="rect-info price" id="price">Price: 1300</div>
+                    <img src="../Images/index/people_img.webp" alt="">
+                </div>
+            </div>
+
+            <div class="rect-card" data-id="14" data-name="Item Fourteen" data-description="Fourteenth item description" data-lvl="14" data-price="1400" data-profit="140" data-image="./Images/plague_sign.png">
+                <img src="../Images/index/people_img.webp" alt="Image 14" class="rect-image">
+                <div class="card-name">Item Fourteen</div>
+                <div class="card-profits">
+                    <div class="carb-profit">Profit per hour</div>
+                    <img src="../Images/index/people_img.webp" alt="">
+                    <div class="profit-number">14000000</div>
+                </div>
+                <div class="card-line"></div>
+                <div class="rect-bottom">
+                    <div class="rect-info lvl" id="lvl">LvL 14</div>
+                    <div class="horizontal-line"></div>
+                    <div class="rect-info price" id="price">Price: 1400</div>
+                    <img src="../Images/index/people_img.webp" alt="">
+                </div>
+            </div>
+
+            <div class="rect-card" data-id="15" data-name="Item Fifteen" data-description="Fifteenth item description" data-lvl="15" data-price="1500" data-profit="150" data-image="./Images/plague_sign.png">
+                <img src="../Images/index/people_img.webp" alt="Image 15" class="rect-image">
+                <div class="card-name">Item Fifteen</div>
+                <div class="card-profits">
+                    <div class="carb-profit">Profit per hour</div>
+                    <img src="../Images/index/people_img.webp" alt="">
+                    <div class="profit-number">15000000</div>
+                </div>
+                <div class="card-line"></div>
+                <div class="rect-bottom">
+                    <div class="rect-info lvl" id="lvl">LvL 15</div>
+                    <div class="horizontal-line"></div>
+                    <div class="rect-info price" id="price">Price: 1500</div>
+                    <img src="../Images/index/people_img.webp" alt="">
+                </div>
+            </div>
+
+            <div class="rect-card" data-id="16" data-name="Item Sixteen" data-description="Sixteenth item description" data-lvl="16" data-price="1600" data-profit="160" data-image="./Images/plague_sign.png">
+                <img src="../Images/index/people_img.webp" alt="Image 16" class="rect-image">
+                <div class="card-name">Item Sixteen</div>
+                <div class="card-profits">
+                    <div class="carb-profit">Profit per hour</div>
+                    <img src="../Images/index/people_img.webp" alt="">
+                    <div class="profit-number">16000000</div>
+                </div>
+                <div class="card-line"></div>
+                <div class="rect-bottom">
+                    <div class="rect-info lvl" id="lvl">LvL 16</div>
+                    <div class="horizontal-line"></div>
+                    <div class="rect-info price" id="price">Price: 1600</div>
+                    <img src="../Images/index/people_img.webp" alt="">
+                </div>
+            </div>
+
+            <div class="rect-card" data-id="17" data-name="Item Seventeen" data-description="Seventeenth item description" data-lvl="17" data-price="1700" data-profit="170" data-image="./Images/plague_sign.png">
+                <img src="../Images/index/people_img.webp" alt="Image 17" class="rect-image">
+                <div class="card-name">Item Seventeen</div>
+                <div class="card-profits">
+                    <div class="carb-profit">Profit per hour</div>
+                    <img src="../Images/index/people_img.webp" alt="">
+                    <div class="profit-number">17000000</div>
+                </div>
+                <div class="card-line"></div>
+                <div class="rect-bottom">
+                    <div class="rect-info lvl" id="lvl">LvL 17</div>
+                    <div class="horizontal-line"></div>
+                    <div class="rect-info price" id="price">Price: 1700</div>
+                    <img src="../Images/index/people_img.webp" alt="">
+                </div>
+            </div>
+
+            <div class="rect-card" data-id="18" data-name="Item Eighteen" data-description="Eighteenth item description" data-lvl="18" data-price="1800" data-profit="180" data-image="./Images/plague_sign.png">
+                <img src="../Images/index/people_img.webp" alt="Image 18" class="rect-image">
+                <div class="card-name">Item Eighteen</div>
+                <div class="card-profits">
+                    <div class="carb-profit">Profit per hour</div>
+                    <img src="../Images/index/people_img.webp" alt="">
+                    <div class="profit-number">18000000</div>
+                </div>
+                <div class="card-line"></div>
+                <div class="rect-bottom">
+                    <div class="rect-info lvl" id="lvl">LvL 18</div>
+                    <div class="horizontal-line"></div>
+                    <div class="rect-info price" id="price">Price: 1800</div>
+                    <img src="../Images/index/people_img.webp" alt="">
+                </div>
+            </div>
+
+            <div class="rect-card" data-id="19" data-name="Item Nineteen" data-description="Nineteenth item description" data-lvl="19" data-price="1900" data-profit="190" data-image="./Images/plague_sign.png">
+                <img src="../Images/index/people_img.webp" alt="Image 19" class="rect-image">
+                <div class="card-name">Item Nineteen</div>
+                <div class="card-profits">
+                    <div class="carb-profit">Profit per hour</div>
+                    <img src="../Images/index/people_img.webp" alt="">
+                    <div class="profit-number">19000000</div>
+                </div>
+                <div class="card-line"></div>
+                <div class="rect-bottom">
+                    <div class="rect-info lvl" id="lvl">LvL 19</div>
+                    <div class="horizontal-line"></div>
+                    <div class="rect-info price" id="price">Price: 1900</div>
+                    <img src="../Images/index/people_img.webp" alt="">
+                </div>
+            </div>
+
+            <div class="rect-card" data-id="20" data-name="Item Twenty" data-description="Twentieth item description" data-lvl="20" data-price="2000" data-profit="200" data-image="./Images/plague_sign.png">
+                <img src="../Images/index/people_img.webp" alt="Image 20" class="rect-image">
+                <div class="card-name">Item Twenty</div>
+                <div class="card-profits">
+                    <div class="carb-profit">Profit per hour</div>
+                    <img src="../Images/index/people_img.webp" alt="">
+                    <div class="profit-number">20000000</div>
+                </div>
+                <div class="card-line"></div>
+                <div class="rect-bottom">
+                    <div class="rect-info lvl" id="lvl">LvL 20</div>
+                    <div class="horizontal-line"></div>
+                    <div class="rect-info price" id="price">Price: 2000</div>
+                    <img src="../Images/index/people_img.webp" alt="">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Третья вкладка (объекты 21-30) -->
+    <div id="memory-grid" class="section" style="display: none;">
+        <h2 class="general-title">Memory Grid</h2>
+        <div class="container-grid">
+            <!-- Объекты с 21 по 30 -->
+            <div class="rect-card" data-id="21" data-name="Item Twenty-One" data-description="Twenty-First item description" data-lvl="21" data-price="2100" data-profit="210" data-image="./Images/plague_sign.png">
+                <img src="../Images/index/people_img.webp" alt="Image 21" class="rect-image">
+                <div class="card-name">Item Twenty-One</div>
+                <div class="card-profits">
+                    <div class="carb-profit">Profit per hour</div>
+                    <img src="../Images/index/people_img.webp" alt="">
+                    <div class="profit-number">21000000</div>
+                </div>
+                <div class="card-line"></div>
+                <div class="rect-bottom">
+                    <div class="rect-info lvl" id="lvl">LvL 21</div>
+                    <div class="horizontal-line"></div>
+                    <div class="rect-info price" id="price">Price: 2100</div>
+                    <img src="../Images/index/people_img.webp" alt="">
+                </div>
+            </div>
+
+            <div class="rect-card" data-id="22" data-name="Item Twenty-Two" data-description="Twenty-Second item description" data-lvl="22" data-price="2200" data-profit="220" data-image="./Images/plague_sign.png">
+                <img src="../Images/index/people_img.webp" alt="Image 22" class="rect-image">
+                <div class="card-name">Item Twenty-Two</div>
+                <div class="card-profits">
+                    <div class="carb-profit">Profit per hour</div>
+                    <img src="../Images/index/people_img.webp" alt="">
+                    <div class="profit-number">22000000</div>
+                </div>
+                <div class="card-line"></div>
+                <div class="rect-bottom">
+                    <div class="rect-info lvl" id="lvl">LvL 22</div>
+                    <div class="horizontal-line"></div>
+                    <div class="rect-info price" id="price">Price: 2200</div>
+                    <img src="../Images/index/people_img.webp" alt="">
+                </div>
+            </div>
+
+            <div class="rect-card" data-id="23" data-name="Item Twenty-Three" data-description="Twenty-Third item description" data-lvl="23" data-price="2300" data-profit="230" data-image="./Images/plague_sign.png">
+                <img src="../Images/index/people_img.webp" alt="Image 23" class="rect-image">
+                <div class="card-name">Item Twenty-Three</div>
+                <div class="card-profits">
+                    <div class="carb-profit">Profit per hour</div>
+                    <img src="../Images/index/people_img.webp" alt="">
+                    <div class="profit-number">23000000</div>
+                </div>
+                <div class="card-line"></div>
+                <div class="rect-bottom">
+                    <div class="rect-info lvl" id="lvl">LvL 23</div>
+                    <div class="horizontal-line"></div>
+                    <div class="rect-info price" id="price">Price: 2300</div>
+                    <img src="../Images/index/people_img.webp" alt="">
+                </div>
+            </div>
+
+            <div class="rect-card" data-id="24" data-name="Item Twenty-Four" data-description="Twenty-Fourth item description" data-lvl="24" data-price="2400" data-profit="240" data-image="./Images/plague_sign.png">
+                <img src="../Images/index/people_img.webp" alt="Image 24" class="rect-image">
+                <div class="card-name">Item Twenty-Four</div>
+                <div class="card-profits">
+                    <div class="carb-profit">Profit per hour</div>
+                    <img src="../Images/index/people_img.webp" alt="">
+                    <div class="profit-number">24000000</div>
+                </div>
+                <div class="card-line"></div>
+                <div class="rect-bottom">
+                    <div class="rect-info lvl" id="lvl">LvL 24</div>
+                    <div class="horizontal-line"></div>
+                    <div class="rect-info price" id="price">Price: 2400</div>
+                    <img src="../Images/index/people_img.webp" alt="">
+                </div>
+            </div>
+
+            <div class="rect-card" data-id="25" data-name="Item Twenty-Five" data-description="Twenty-Fifth item description" data-lvl="25" data-price="2500" data-profit="250" data-image="./Images/plague_sign.png">
+                <img src="../Images/index/people_img.webp" alt="Image 25" class="rect-image">
+                <div class="card-name">Item Twenty-Five</div>
+                <div class="card-profits">
+                    <div class="carb-profit">Profit per hour</div>
+                    <img src="../Images/index/people_img.webp" alt="">
+                    <div class="profit-number">25000000</div>
+                </div>
+                <div class="card-line"></div>
+                <div class="rect-bottom">
+                    <div class="rect-info lvl" id="lvl">LvL 25</div>
+                    <div class="horizontal-line"></div>
+                    <div class="rect-info price" id="price">Price: 2500</div>
+                    <img src="../Images/index/people_img.webp" alt="">
+                </div>
+            </div>
+
+            <div class="rect-card" data-id="26" data-name="Item Twenty-Six" data-description="Twenty-Sixth item description" data-lvl="26" data-price="2600" data-profit="260" data-image="./Images/plague_sign.png">
+                <img src="../Images/index/people_img.webp" alt="Image 26" class="rect-image">
+                <div class="card-name">Item Twenty-Six</div>
+                <div class="card-profits">
+                    <div class="carb-profit">Profit per hour</div>
+                    <img src="../Images/index/people_img.webp" alt="">
+                    <div class="profit-number">26000000</div>
+                </div>
+                <div class="card-line"></div>
+                <div class="rect-bottom">
+                    <div class="rect-info lvl" id="lvl">LvL 26</div>
+                    <div class="horizontal-line"></div>
+                    <div class="rect-info price" id="price">Price: 2600</div>
+                    <img src="../Images/index/people_img.webp" alt="">
+                </div>
+            </div>
+
+            <div class="rect-card" data-id="27" data-name="Item Twenty-Seven" data-description="Twenty-Seventh item description" data-lvl="27" data-price="2700" data-profit="270" data-image="./Images/plague_sign.png">
+                <img src="../Images/index/people_img.webp" alt="Image 27" class="rect-image">
+                <div class="card-name">Item Twenty-Seven</div>
+                <div class="card-profits">
+                    <div class="carb-profit">Profit per hour</div>
+                    <img src="../Images/index/people_img.webp" alt="">
+                    <div class="profit-number">27000000</div>
+                </div>
+                <div class="card-line"></div>
+                <div class="rect-bottom">
+                    <div class="rect-info lvl" id="lvl">LvL 27</div>
+                    <div class="horizontal-line"></div>
+                    <div class="rect-info price" id="price">Price: 2700</div>
+                    <img src="../Images/index/people_img.webp" alt="">
+                </div>
+            </div>
+
+            <div class="rect-card" data-id="28" data-name="Item Twenty-Eight" data-description="Twenty-Eighth item description" data-lvl="28" data-price="2800" data-profit="280" data-image="./Images/plague_sign.png">
+                <img src="../Images/index/people_img.webp" alt="Image 28" class="rect-image">
+                <div class="card-name">Item Twenty-Eight</div>
+                <div class="card-profits">
+                    <div class="carb-profit">Profit per hour</div>
+                    <img src="../Images/index/people_img.webp" alt="">
+                    <div class="profit-number">28000000</div>
+                </div>
+                <div class="card-line"></div>
+                <div class="rect-bottom">
+                    <div class="rect-info lvl" id="lvl">LvL 28</div>
+                    <div class="horizontal-line"></div>
+                    <div class="rect-info price" id="price">Price: 2800</div>
+                    <img src="../Images/index/people_img.webp" alt="">
+                </div>
+            </div>
+
+            <div class="rect-card" data-id="29" data-name="Item Twenty-Nine" data-description="Twenty-Ninth item description" data-lvl="29" data-price="2900" data-profit="290" data-image="./Images/plague_sign.png">
+                <img src="../Images/index/people_img.webp" alt="Image 29" class="rect-image">
+                <div class="card-name">Item Twenty-Nine</div>
+                <div class="card-profits">
+                    <div class="carb-profit">Profit per hour</div>
+                    <img src="../Images/index/people_img.webp" alt="">
+                    <div class="profit-number">29000000</div>
+                </div>
+                <div class="card-line"></div>
+                <div class="rect-bottom">
+                    <div class="rect-info lvl" id="lvl">LvL 29</div>
+                    <div class="horizontal-line"></div>
+                    <div class="rect-info price" id="price">Price: 2900</div>
+                    <img src="../Images/index/people_img.webp" alt="">
+                </div>
+            </div>
+
+            <div class="rect-card" data-id="30" data-name="Item Thirty" data-description="Thirtieth item description" data-lvl="30" data-price="3000" data-profit="300" data-image="./Images/plague_sign.png">
+                <img src="../Images/index/people_img.webp" alt="Image 30" class="rect-image">
+                <div class="card-name">Item Thirty</div>
+                <div class="card-profits">
+                    <div class="carb-profit">Profit per hour</div>
+                    <img src="../Images/index/people_img.webp" alt="">
+                    <div class="profit-number">30000000</div>
+                </div>
+                <div class="card-line"></div>
+                <div class="rect-bottom">
+                    <div class="rect-info lvl" id="lvl">LvL 30</div>
+                    <div class="horizontal-line"></div>
+                    <div class="rect-info price" id="price">Price: 3000</div>
+                    <img src="../Images/index/people_img.webp" alt="">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Четвертая вкладка (объекты 31-40) -->
+    <div id="monster-strike" class="section" style="display: none;">
+        <h2 class="general-title">Monster Strike</h2>
+        <div class="container-grid">
+            <!-- Объекты с 31 по 40 -->
+            <div class="rect-card" data-id="31" data-name="Item Thirty-One" data-description="Thirty-First item description" data-lvl="31" data-price="3100" data-profit="310" data-image="./Images/plague_sign.png">
+                <img src="../Images/index/people_img.webp" alt="Image 31" class="rect-image">
+                <div class="card-name">Item Thirty-One</div>
+                <div class="card-profits">
+                    <div class="carb-profit">Profit per hour</div>
+                    <img src="../Images/index/people_img.webp" alt="">
+                    <div class="profit-number">31000000</div>
+                </div>
+                <div class="card-line"></div>
+                <div class="rect-bottom">
+                    <div class="rect-info lvl" id="lvl">LvL 31</div>
+                    <div class="horizontal-line"></div>
+                    <div class="rect-info price" id="price">Price: 3100</div>
+                    <img src="../Images/index/people_img.webp" alt="">
+                </div>
+            </div>
+
+            <div class="rect-card" data-id="32" data-name="Item Thirty-Two" data-description="Thirty-Second item description" data-lvl="32" data-price="3200" data-profit="320" data-image="./Images/plague_sign.png">
+                <img src="../Images/index/people_img.webp" alt="Image 32" class="rect-image">
+                <div class="card-name">Item Thirty-Two</div>
+                <div class="card-profits">
+                    <div class="carb-profit">Profit per hour</div>
+                    <img src="../Images/index/people_img.webp" alt="">
+                    <div class="profit-number">32000000</div>
+                </div>
+                <div class="card-line"></div>
+                <div class="rect-bottom">
+                    <div class="rect-info lvl" id="lvl">LvL 32</div>
+                    <div class="horizontal-line"></div>
+                    <div class="rect-info price" id="price">Price: 3200</div>
+                    <img src="../Images/index/people_img.webp" alt="">
+                </div>
+            </div>
+
+            <div class="rect-card" data-id="33" data-name="Item Thirty-Three" data-description="Thirty-Third item description" data-lvl="33" data-price="3300" data-profit="330" data-image="./Images/plague_sign.png">
+                <img src="../Images/index/people_img.webp" alt="Image 33" class="rect-image">
+                <div class="card-name">Item Thirty-Three</div>
+                <div class="card-profits">
+                    <div class="carb-profit">Profit per hour</div>
+                    <img src="../Images/index/people_img.webp" alt="">
+                    <div class="profit-number">33000000</div>
+                </div>
+                <div class="card-line"></div>
+                <div class="rect-bottom">
+                    <div class="rect-info lvl" id="lvl">LvL 33</div>
+                    <div class="horizontal-line"></div>
+                    <div class="rect-info price" id="price">Price: 3300</div>
+                    <img src="../Images/index/people_img.webp" alt="">
+                </div>
+            </div>
+
+            <div class="rect-card" data-id="34" data-name="Item Thirty-Four" data-description="Thirty-Fourth item description" data-lvl="34" data-price="3400" data-profit="340" data-image="./Images/plague_sign.png">
+                <img src="../Images/index/people_img.webp" alt="Image 34" class="rect-image">
+                <div class="card-name">Item Thirty-Four</div>
+                <div class="card-profits">
+                    <div class="carb-profit">Profit per hour</div>
+                    <img src="../Images/index/people_img.webp" alt="">
+                    <div class="profit-number">34000000</div>
+                </div>
+                <div class="card-line"></div>
+                <div class="rect-bottom">
+                    <div class="rect-info lvl" id="lvl">LvL 34</div>
+                    <div class="horizontal-line"></div>
+                    <div class="rect-info price" id="price">Price: 3400</div>
+                    <img src="../Images/index/people_img.webp" alt="">
+                </div>
+            </div>
+
+            <div class="rect-card" data-id="35" data-name="Item Thirty-Five" data-description="Thirty-Fifth item description" data-lvl="35" data-price="3500" data-profit="350" data-image="./Images/plague_sign.png">
+                <img src="../Images/index/people_img.webp" alt="Image 35" class="rect-image">
+                <div class="card-name">Item Thirty-Five</div>
+                <div class="card-profits">
+                    <div class="carb-profit">Profit per hour</div>
+                    <img src="../Images/index/people_img.webp" alt="">
+                    <div class="profit-number">35000000</div>
+                </div>
+                <div class="card-line"></div>
+                <div class="rect-bottom">
+                    <div class="rect-info lvl" id="lvl">LvL 35</div>
+                    <div class="horizontal-line"></div>
+                    <div class="rect-info price" id="price">Price: 3500</div>
+                    <img src="../Images/index/people_img.webp" alt="">
+                </div>
+            </div>
+
+            <div class="rect-card" data-id="36" data-name="Item Thirty-Six" data-description="Thirty-Sixth item description" data-lvl="36" data-price="3600" data-profit="360" data-image="./Images/plague_sign.png">
+                <img src="../Images/index/people_img.webp" alt="Image 36" class="rect-image">
+                <div class="card-name">Item Thirty-Six</div>
+                <div class="card-profits">
+                    <div class="carb-profit">Profit per hour</div>
+                    <img src="../Images/index/people_img.webp" alt="">
+                    <div class="profit-number">36000000</div>
+                </div>
+                <div class="card-line"></div>
+                <div class="rect-bottom">
+                    <div class="rect-info lvl" id="lvl">LvL 36</div>
+                    <div class="horizontal-line"></div>
+                    <div class="rect-info price" id="price">Price: 3600</div>
+                    <img src="../Images/index/people_img.webp" alt="">
+                </div>
+            </div>
+
+            <div class="rect-card" data-id="37" data-name="Item Thirty-Seven" data-description="Thirty-Seventh item description" data-lvl="37" data-price="3700" data-profit="370" data-image="./Images/plague_sign.png">
+                <img src="../Images/index/people_img.webp" alt="Image 37" class="rect-image">
+                <div class="card-name">Item Thirty-Seven</div>
+                <div class="card-profits">
+                    <div class="carb-profit">Profit per hour</div>
+                    <img src="../Images/index/people_img.webp" alt="">
+                    <div class="profit-number">37000000</div>
+                </div>
+                <div class="card-line"></div>
+                <div class="rect-bottom">
+                    <div class="rect-info lvl" id="lvl">LvL 37</div>
+                    <div class="horizontal-line"></div>
+                    <div class="rect-info price" id="price">Price: 3700</div>
+                    <img src="../Images/index/people_img.webp" alt="">
+                </div>
+            </div>
+
+            <div class="rect-card" data-id="38" data-name="Item Thirty-Eight" data-description="Thirty-Eighth item description" data-lvl="38" data-price="3800" data-profit="380" data-image="./Images/plague_sign.png">
+                <img src="../Images/index/people_img.webp" alt="Image 38" class="rect-image">
+                <div class="card-name">Item Thirty-Eight</div>
+                <div class="card-profits">
+                    <div class="carb-profit">Profit per hour</div>
+                    <img src="../Images/index/people_img.webp" alt="">
+                    <div class="profit-number">38000000</div>
+                </div>
+                <div class="card-line"></div>
+                <div class="rect-bottom">
+                    <div class="rect-info lvl" id="lvl">LvL 38</div>
+                    <div class="horizontal-line"></div>
+                    <div class="rect-info price" id="price">Price: 3800</div>
+                    <img src="../Images/index/people_img.webp" alt="">
+                </div>
+            </div>
+
+            <div class="rect-card" data-id="39" data-name="Item Thirty-Nine" data-description="Thirty-Ninth item description" data-lvl="39" data-price="3900" data-profit="390" data-image="./Images/plague_sign.png">
+                <img src="../Images/index/people_img.webp" alt="Image 39" class="rect-image">
+                <div class="card-name">Item Thirty-Nine</div>
+                <div class="card-profits">
+                    <div class="carb-profit">Profit per hour</div>
+                    <img src="../Images/index/people_img.webp" alt="">
+                    <div class="profit-number">39000000</div>
+                </div>
+                <div class="card-line"></div>
+                <div class="rect-bottom">
+                    <div class="rect-info lvl" id="lvl">LvL 39</div>
+                    <div class="horizontal-line"></div>
+                    <div class="rect-info price" id="price">Price: 3900</div>
+                    <img src="../Images/index/people_img.webp" alt="">
+                </div>
+            </div>
+
+            <div class="rect-card" data-id="40" data-name="Item Forty" data-description="Fortieth item description" data-lvl="40" data-price="4000" data-profit="400" data-image="./Images/plague_sign.png">
+                <img src="../Images/index/people_img.webp" alt="Image 40" class="rect-image">
+                <div class="card-name">Item Forty</div>
+                <div class="card-profits">
+                    <div class="carb-profit">Profit per hour</div>
+                    <img src="../Images/index/people_img.webp" alt="">
+                    <div class="profit-number">40000000</div>
+                </div>
+                <div class="card-line"></div>
+                <div class="rect-bottom">
+                    <div class="rect-info lvl" id="lvl">LvL 40</div>
+                    <div class="horizontal-line"></div>
+                    <div class="rect-info price" id="price">Price: 4000</div>
+                    <img src="../Images/index/people_img.webp" alt="">
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- Подключаем JavaScript -->
+    <script src="../js/tab-shop.js"></script> <!-- Подключаем js/tab-shop.js -->
+</body>
+</html>

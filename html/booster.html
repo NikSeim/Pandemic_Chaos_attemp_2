@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Бустеры и улучшения</title>
+    <link rel="stylesheet" href="../css/booster.css"> <!-- Подключаем CSS для этой страницы -->
+</head>
+<body>
+    <!-- Кнопка для закрытия окна и возвращения на вкладку home -->
+    <div class="close-button">&times;</div>
+
+    <div class="booster-header">Бустеры и улучшения</div>
+
+    <div class="booster-container">
+        <div class="second-name">uluchsenija</div>
+        <div class="booster-item" data-id="1" data-lvl="1" data-price="2000" data-img="../Images/index/booster_icon.webp" data-description="tut budet opisanije aaaaaaaaa aaaaaaa aaaaaaaaaaa aaaa aa aaaa aaaaaa aaaaaaa aaa aaa aaaa aaaaa aaaaa aaaa">
+            <img src="../Images/index/booster_icon.webp" alt="Booster Icon" class="booster-icon"> 
+            <div class="info-conteiner">
+                <div class="booster-name">profit per tap</div>
+                <div class="lvl">lvl</div>
+            </div>
+            <div class="arrow"><img src="../Images/tasks-img/arrow-img.webp" alt="Arrow Icon" class="arrow-icon"></div>
+        </div>
+
+        <div class="booster-item" data-id="2" data-lvl="1"data-price="2000" data-img="../Images/index/booster_icon.webp" data-description="tut budet opisanije aaaooooooooo ooooo ooooooo ooo oooooo ooo ooooo ooooo ooo oooooo oooo ooooo oooo oaaa aa">
+            <img src="../Images/index/booster_icon.webp" alt="Booster Icon" class="booster-icon"> 
+            <div class="info-conteiner">
+                <div class="booster-name">energy</div>
+                <div class="lvl">lvl</div>
+            </div>
+            <div class="arrow"><img src="../Images/tasks-img/arrow-img.webp" alt="Arrow Icon" class="arrow-icon"></div>
+        </div>
+
+        <div class="space"></div>
+
+        <div class="second-name">boobster</div>
+        <div class="booster-item-booster" data-id="3" data-time="2:00:00">
+            <img src="../Images/index/booster_icon.webp" alt="Booster Icon" class="booster-icon">
+            <div class="info-conteiner">
+                <div class="booster-name">ful energy</div>
+            </div>
+            <div class="arrow"><img src="../Images/tasks-img/arrow-img.webp" alt="Arrow Icon" class="arrow-icon"></div>
+        </div>
+
+        <div class="booster-item-booster" data-id="4" data-time="3:00:00">
+            <img src="../Images/index/booster_icon.webp" alt="Booster Icon" class="booster-icon">
+            <div class="info-conteiner">
+                <div class="booster-name">turbo</div>
+            </div>
+            <div class="arrow"><img src="../Images/tasks-img/arrow-img.webp" alt="Arrow Icon" class="arrow-icon"></div>
+        </div>
+    </div>
+
+    <div class="overlay"></div>
+
+    <div class="modal">
+        <div class="modal-content">
+            <span class="modal-close">&times;</span>
+            <img id="modal-image" src="../Images/index/booster_icon.webp" alt="Booster Icon" class="modal-main-image">
+            <h2 id="modal-title">Название бустера</h2>
+            <div id="modal-description">Описание бустера появится здесь.</div>
+            
+            <!-- Цена и маленькая картинка -->
+            <div class="modal-price-container">
+                <img src="../Images/plague_sign.png" alt="Coin Icon" class="modal-coin-icon">
+                <span id="modal-price">500</span>
+            </div>
+            
+            <!-- Кнопка "Купить" -->
+            <button class="modal-buy-btn">Купить</button>
+        </div>
+    </div>
+
+    <script src="../js/booster.js"></script> <!-- Подключаем JS для этой страницы -->
+</body>
+</html>

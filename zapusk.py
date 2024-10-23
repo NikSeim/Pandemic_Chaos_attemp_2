@@ -3,8 +3,8 @@ from telegram import Update, InlineKeyboardButton, InlineKeyboardMarkup, WebAppI
 from telegram.ext import Application, CommandHandler, CallbackContext
 
 # Ваш токен бота
-TOKEN = '7408614164:AAFJaFSrbTFaeQr5QLzplZBT4fOGY_2WVZk'
-GAME_URL = 'https://nikseim.github.io/game_attemp_2/'
+TOKEN = '7785609671:AAFjHtGWXb7IoLo4wWl7FJsxq6pBkAyxupQ'
+GAME_URL = ' https://nikseim.github.io/Pandemic_Chaos_attemp_2'
 
 async def start(update: Update, context: CallbackContext) -> None:
     keyboard = [

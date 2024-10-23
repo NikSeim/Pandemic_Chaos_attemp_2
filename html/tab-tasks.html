@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tasks and Rewards</title>
+    <link rel="stylesheet" href="../css/tab-tasks.css">
+</head>
+<body>
+    <div class="tasks-container">
+        <header id="header">
+            <img src="../Images/tasks-img/caution_danger.webp" class="caution-danger" alt="Tokens">
+            <h1>Выполняй задания и заражай больше!</h1>
+            <button id="reset-days" class="reset-button">Сбросить дни</button>
+        </header>
+
+        <!-- Task Group for "Daily" tasks -->
+        <div class="task-group">
+            <h2>Daily</h2>
+            <div class="task-box" id="daily-reward-task">
+                <div class="task-info">
+                    <img src="../Images/tasks-img/daily-reward-icon.webp" alt="Reward Icon" class="task-icon-rewards">
+                    <div class="task-title-container">
+                        <p class="task-title">Daily reward</p>
+                        <p class="task-reward">+6,649,000</p>
+                    </div>
+                </div>
+                <button class="claim-button"><img src="../Images/tasks-img/arrow-img.webp" alt="Arrow"></button>
+            </div>
+        </div>
+
+        <!-- Task Group for "Task" tasks -->
+        <div class="task-group">
+            <h2>Task</h2>
+            <!-- Scrollable list -->
+            <div class="task-list">
+                <div class="task-box">
+                    <div class="task-info">
+                        <img src="../Images/tasks-img/telegram-logo.webp" alt="Instagram Icon" class="task-icon">
+                        <div class="task-title-container">
+                            <p class="task-title">Subscribe</p>
+                            <p class="task-reward">+50,000</p>
+                        </div>
+                    </div>
+                    <button class="claim-button"><img src="../Images/tasks-img/arrow-img.webp" alt="Arrow"></button>
+                </div>
+                <div class="task-box">
+                    <div class="task-info">
+                        <img src="../Images/tasks-img/inst-logo.webp" alt="Twitter Icon" class="task-icon">
+                        <div class="task-title-container">
+                            <p class="task-title">Follow</p>
+                            <p class="task-reward">+50,000</p>
+                        </div>
+                    </div>
+                    <button class="claim-button"><img src="../Images/tasks-img/arrow-img.webp" alt="Arrow"></button>
+                </div>
+                <div class="task-box">
+                    <div class="task-info">
+                        <img src="../Images/tasks-img/twitterx-logo.webp" alt="Dialog Icon" class="task-icon">
+                        <div class="task-title-container">
+                            <p class="task-title">Join Chat</p>
+                            <p class="task-reward">+50,000</p>
+                        </div>
+                    </div>
+                    <button class="claim-button"><img src="../Images/tasks-img/arrow-img.webp" alt="Arrow"></button>
+                </div>
+                <!-- Добавлены два новых задания с dialog-logo.webp -->
+                <div class="task-box">
+                    <div class="task-info">
+                        <img src="../Images/tasks-img/dialog-logo.webp" alt="Dialog Icon" class="task-icon">
+                        <div class="task-title-container">
+                            <p class="task-title">Join Group</p>
+                            <p class="task-reward">+50,000</p>
+                        </div>
+                    </div>
+                    <button class="claim-button"><img src="../Images/tasks-img/arrow-img.webp" alt="Arrow"></button>
+                </div>
+                <div class="task-box">
+                    <div class="task-info">
+                        <img src="../Images/tasks-img/dialog-logo.webp" alt="Dialog Icon" class="task-icon">
+                        <div class="task-title-container">
+                            <p class="task-title">Leave Feedback</p>
+                            <p class="task-reward">+50,000</p>
+                        </div>
+                    </div>
+                    <button class="claim-button"><img src="../Images/tasks-img/arrow-img.webp" alt="Arrow"></button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal Overlay and Modal Window -->
+    <div id="tasks-overlay" class="tasks-overlay"></div>
+    <div id="tasks-modal" class="tasks-modal">
+        <span class="tasks-close close">&times;</span>
+        <div class="tasks-modal-content">
+            <img src="" alt="">
+            <div class="modal-header">Daily Reward</div>
+            <div id="tasks-message-box" class="message-box"></div>
+            <div class="tasks-days-container" id="tasks-days-container"></div>
+            <button class="tasks-claim-button-modal">Claim</button>
+            <div id="tasks-all-rewards-claimed" class="tasks-all-rewards-claimed" style="display: none;">All rewards claimed</div>
+        </div>
+    </div>
+
+    <!-- JavaScript -->
+    <script src="../js/tab-tasks.js"></script>
+</body>
+</html>

@@ -1,1 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <title>Interactive Game</title>
+    <link rel="stylesheet" href="./css/index.css">
+</head>
+<body>
+    <!-- Main content container -->
+    <div class="content-wrapper">
+        <!-- Tab content -->
+        <div id="tab-content">
+            <!-- Home Tab -->
+            <div id="home" class="tab-pane">
+                <div class="interactive-container">
+                    <!-- Rectangular panels -->
+                    <div class="interactive-rectangles">
+                        <div class="interactive-rectangle">
+                            <div class="interactive-top-part">Profit per Tap</div>
+                            <div class="interactive-bottom-part">
+                                <img src="./Images/index/people_img.webp" alt="Icon 1" class="interactive-small-icon">
+                                <span id="profit-per-tap"></span> <!-- Элемент для отображения прибыли за клик -->
+                            </div>
+                        </div>
+                        <div class="interactive-rectangle">
+                            <div class="interactive-top-part">Hourly Profit</div>
+                            <div class="interactive-bottom-part">
+                                <img src="./Images/index/people_img.webp" alt="Icon 2" class="interactive-small-icon">
+                                <span id="hourly-profit"></span> <!-- Элемент для отображения часовой прибыли -->
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Scoreboard -->
+                    <div class="interactive-score-board">
+                        <div class="score-row">
+                            <img src="./Images/index/people_img.webp" alt="People Icon" class="people-icon">
+                            <div class="coin-info">
+                                <div>Coins: <span id="coin-counter">0</span></div>
+                                <p class="passive-income-text">100 per/hour</p>
+                                <div id="turbo-timer1">0:30</div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Clickable image -->
+                    <div class="clickable-image">
+                        <img src="./Images/index/plague_sign.webp" alt="Click Me" id="interactive-clickable-image">
+                    </div>
+                </div>
+                <!-- DNA progress container -->
+                <div class="dna-progress-container">
+                        <div class="booster-button-container">
+                            <img src="./Images/index/booster_icon.webp" alt="Booster Icon" class="booster-icon">
+                        </div>
+                    <img src="./Images/index/dna_img.webp" alt="DNA Icon" class="dna-icon">
+                    <div class="interactive-progress-container" id="progress-click">
+                        <p><span id="progress-counter">100</span></p>
+                    </div>
+                </div>
+            </div>
 
+            <!-- Shop Tab in iframe -->
+            <div id="shop" class="tab-pane" style="height: 100%;">
+                <iframe src="./html/tab-shop.html" style="width: 100vw; height: 100%; border: none;"></iframe>
+            </div>
+
+            <!-- Friends Tab in iframe -->
+            <div id="friends" class="tab-pane">
+                <iframe src="./html/tab-friend.html" style="width: 100%; height: 100%; border: none;"></iframe>
+            </div>
+
+            <!-- Tasks Tab in iframe -->
+            <div id="tasks" class="tab-pane">
+                <iframe src="./html/tab-tasks.html" style="width: 100%; height: 100%; border: none;"></iframe>
+            </div>
+        </div>
+    </div>
+
+        <!-- Модальное окно -->
+        <!-- Модальное окно в index.html -->
+    <div class="modal-overlay"></div>
+        <div class="modal-window">
+        <span class="close-btn">&times;</span>
+        <img class="modal-image" src="" alt="Image">
+        <div class="modal-title"></div>
+        <div class="modal-description"></div>
+        <div class="profit-per-hour">profit per hour</div>
+        <div class="profit-container">
+            <img src="./Images/index/people_img.webp" alt="">
+            <p class="modal-profit"></p>
+        </div>
+        <div class="price-container">
+            <img src="./Images/index/people_img.webp" alt="">
+            <p class="modal-price"></p>
+        </div>
+        <button class="buy-btn">Купить</button>
+    </div>
+
+        
+    <!-- Bottom Tabs -->
+    <div class="interactive-tabs">
+        <button class="interactive-tab-button" data-tab="home">Home</button>
+        <button class="interactive-tab-button" data-tab="shop">Mutation</button>
+        <button class="interactive-tab-button" data-tab="friends">Friends</button>
+        <button class="interactive-tab-button" data-tab="tasks">Tasks</button>
+    </div>
+
+    <!-- Video Background Container -->
+    <div id="video-background-container">
+        <video id="video-background" autoplay loop muted>
+            <source src="Images/158229-81635c9520_small_2.mp4" type="video/mp4">
+            <!-- Add additional source tags if needed -->
+        </video>
+    </div>
+
+
+    
+
+    <script src="./js/index.js"></script>
+</body>
+</html>

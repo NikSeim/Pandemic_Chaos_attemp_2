@@ -1,0 +1,426 @@
+/* Убедимся, что html и body занимают всю высоту */
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    overflow: hidden; /* Избегаем появления прокрутки */
+    font-family: Arial, sans-serif;
+    background: url('../Images/index/plague_background.webp') no-repeat center center fixed;
+    background-size: cover;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    z-index: 1;
+}
+
+#video-background-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1; /* Ensure it stays behind other content */
+    overflow: hidden;
+    display: none;
+}
+
+#video-background {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+
+/* Контейнер контента должен заполнять всю страницу */
+.content-wrapper {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    overflow-y: auto;
+}
+
+/* Корректировка iframe, чтобы он занимал 100% */
+#shop iframe, #friends iframe, #tasks iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+
+/* Для панели вкладок на дне экрана */
+.interactive-tabs {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    background-color: #000;
+    display: flex;
+    justify-content: space-around;
+    box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.5);
+    z-index: 100;
+}
+
+/* Кнопки вкладок */
+.interactive-tab-button {
+    padding: 2vw;
+    background-image: radial-gradient(#adab07, #7c5d09);
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-size: calc(0.8em + 0.5vw);
+    border-radius: 10px;
+}
+
+.interactive-tab-button.active {
+    background-image: radial-gradient(#adab07, #adab07);
+}
+
+.interactive-tab-button:hover {
+    background-color: #555;
+}
+
+#turbo-timer {
+    display: none;
+}
+
+/* Контент вкладок */
+#tab-content {
+    flex-grow: 1;
+    width: 100%;
+    height: calc(100vh - 80px); /* Учитываем высоту панели с вкладками */
+    overflow-y: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Скрытие всех вкладок по умолчанию */
+#tab-content > div,
+#tab-content > iframe {
+    display: none;
+    height: 100%;
+}
+
+/* По умолчанию отображаем вкладку home */
+#home {
+    display: block;
+}
+
+/* Общий стиль для вкладок */
+.tab-pane {
+    width: 100%;
+    height: 100%;
+    overflow-y: auto;
+}
+
+/* Стиль для контейнеров вкладок */
+.interactive-container {
+    width: 100%;
+    max-width: 600px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow-x: hidden;
+    overflow-y: hidden;
+}
+
+/* Адаптивная сетка для прямоугольников */
+.interactive-rectangles {
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: center;
+    width: 100%;
+    padding: 20px 0; /* Убираем отступы */
+}
+
+.interactive-rectangle {
+    width: 35%; /* Настраиваем ширину под адаптивный дизайн */
+    background-color: #0c0c2a;
+    color: white;
+    text-align: center;
+    border-radius: 20px;
+    margin: 5px;
+    padding: 10px;
+    font-size: calc(0.9em + 0.5vw);
+}
+
+.interactive-top-part {
+    border-bottom: 1px solid #555;
+    margin-bottom: 10px;
+}
+
+.interactive-bottom-part {
+    padding-top: 10px;
+}
+
+.interactive-small-icon {
+    width: 8vw;
+    max-width: 25px;
+    height: auto;
+    margin-bottom: -5px;
+}
+
+/* Интерактивное табло (Scoreboard) */
+.interactive-score-board {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: calc(1.2em + 1vw);
+    margin-top: 5%;
+}
+
+.score-row {
+    display: flex;
+    align-items: center;
+}
+
+.people-icon {
+    width: 20vw;
+    max-width: 70px;
+    height: auto;
+    margin-right: 10px;
+}
+
+.coin-info {
+    display: flex;
+    flex-direction: column;
+}
+
+.passive-income-text {
+    font-size: calc(0.6em + 0.5vw);
+    margin: 0;
+    padding-left: 14px;
+}
+
+/* Кликабельное изображение */
+.clickable-image {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 5%;
+}
+
+#interactive-clickable-image {
+    width: 80vw;
+    max-width: 600px;
+    height: auto;
+    cursor: pointer;
+    border-radius: 50%;
+    transition: transform 0.2s ease; /* Эффект для клика */
+}
+
+/* Контейнер прогресса ДНК */
+.dna-progress-container {
+    display: flex;
+    align-items: center;
+    position: fixed;
+    bottom: 100px;
+    left: 20px;
+}
+
+.dna-icon {
+    width: 8vw;
+    max-width: 23px;
+    height: auto;
+    margin-right: 10px;
+}
+
+.interactive-progress-container {
+    font-size: calc(1.2em + 0.5vw);
+    color: #fff;
+    padding: 10px;
+}
+
+
+/* Стили для модального окна */
+/* Анимация появления окна снизу */
+@keyframes slideUp {
+    from {
+        transform: translateY(100%);
+    }
+    to {
+        transform: translateY(0);
+    }
+}
+
+/* Анимация скрытия окна вниз */
+@keyframes slideDown {
+    from {
+        transform: translateY(0);
+    }
+    to {
+        transform: translateY(100%);
+    }
+}
+
+/* Модальное окно с анимацией */
+.modal-window {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: #333;
+    z-index: 1001;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    overflow-y: auto;
+    box-shadow: none;
+    transform: translateY(100%); /* Скрываем ниже экрана */
+    transition: transform 0.5s ease, opacity 0.5s ease;
+}
+
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh; /* Высота всего экрана */
+    background-color: rgba(0, 0, 0, 0.5); /* Полупрозрачный черный фон */
+    z-index: 1000; /* Убедитесь, что он ниже модального окна */
+    transition: opacity 0.5s ease; /* Плавное изменение прозрачности */
+    display: none; /* Скрыт по умолчанию */
+}
+
+/* Появление overlay */
+.modal-overlay.show {
+    opacity: 1; /* Полупрозрачный фон становится видимым */
+    display: block;
+}
+
+/* Исчезновение overlay */
+.modal-overlay.hide {
+    opacity: 0; /* Прозрачный - исчезает */
+    transition: opacity 0.5s ease; /* Плавное исчезновение */
+}
+
+/* Появление */
+.modal-window.show {
+    transform: translateY(0); /* Появляется снизу */
+}
+
+/* Исчезновение */
+.modal-window.hide {
+    transform: translateY(100%); /* Уходит вниз */
+}
+
+
+/* Кнопка закрытия модального окна */
+.close-btn {
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    font-size: 24px;
+    color: white;
+    cursor: pointer;
+}
+
+/* Стили для изображения, названия и описания в модальном окне */
+.modal-image {
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    margin: 30px;
+    border-radius: 10px;
+}
+
+.modal-title {
+    font-size: 54px;
+    color: #ffcc00;
+}
+
+.modal-description {
+    font-size: 22px;
+    margin: 20px;
+
+}
+
+.profit-per-hour{
+    font-size: 22px;
+}
+
+.profit-container{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.modal-profit {
+    font-size: 20px;
+    margin-left:10px ;
+}
+
+.profit-container img{
+    object-fit: cover;
+    width: 25px;
+    height: 25px;
+}
+
+.price-container{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.modal-price {
+    font-size: 42px;
+    color: #ffcc00;
+    margin-left:10px ;
+}
+
+.price-container img{
+    object-fit: cover;
+    width: 50px;
+    height: 50px;
+}
+
+.buy-btn {
+    background-color: #ffcc00;
+    color: black;
+    width: 80%;
+    height: 90px;
+    font-size: 35px;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    margin-bottom: 40px;
+}
+
+.buy-btn:hover {
+    background-color: #ffaa00;
+}
+/* Wrapper for DNA progress and booster button */
+.dna-progress-wrapper {
+    display: flex;
+    align-items: center;
+    bottom: 0%;
+    left: 20px;
+    max-width: 10%;
+}
+
+/* Adjust the dna-progress-container to remove positioning */
+.dna-progress-container {
+    display: flex;
+    align-items: center;
+    /* Remove the fixed positioning */
+    /* position: fixed; */
+    /* bottom: 100px; */
+    /* left: 20px; */
+}
+
+/* Style for the booster button container */
+.booster-button-container {
+    position: fixed;
+    left: 80%;
+    bottom: 12%;
+}
+
+/* Style for the booster icon */
+.booster-icon {
+    width: 12vw;
+    max-width: 40x;
+    cursor: pointer; /* Optional: indicates it's clickable */
+}

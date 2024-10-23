@@ -1,0 +1,174 @@
+#friends-content {
+  text-align: center;
+  font-size: 24px;
+  color: white;
+  margin-top: 1%;
+  position: absolute;
+  top: 7%;
+  width: 100%;
+  z-index: 1;
+  padding-bottom: 70px;
+}
+
+#friends-content h1 {
+  font-size: 32px;  
+  margin-bottom: 10px; /* Уменьшил отступ снизу */
+}
+
+.invite-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  margin-top: 20px; /* Опустил блок ниже */
+}
+
+.invite-box {
+  display: flex;
+  align-items: center;
+  background-color: #a9a9a9;
+  border-radius: 15px;
+  padding: 15px;
+  width: 80%;
+  max-width: 430px;
+  color: white;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.gift-image {
+  width: 50px;
+  height: 50px;
+  margin-right: 15px;
+}
+
+.invite-text {
+  display: flex;
+  color: #3a3a3a;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.invite-title {
+  font-size: 18px;
+  font-weight: bold;
+  margin: 0;
+}
+
+.invite-bonus {
+  font-size: 16px;
+  margin: 5px 0 0;
+  display: flex;
+  align-items: center;
+}
+
+.bonus-amount {
+  color: yellow;
+}
+
+.people-icon {
+  width: 20px;
+  height: 20px;
+  margin-right: 5px;
+}
+
+.extra-buttons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  bottom: -130%;
+  width: 100%;
+  gap: 20px;
+}
+
+.long-button {
+  background-color: #4161e6;
+  color: white;
+  border: none;
+  border-radius: 10px;
+  padding: 2% 10%; /* Увеличил отступы для увеличения размера кнопки */
+  font-size: 24px; /* Увеличил размер шрифта */
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+}
+
+.invite-icon {
+  width: 20px;
+  height: 20px;
+  margin-left: 5px;
+}
+
+.square-button {
+  background-color: #00aaff;
+  border: none;
+  border-radius: 15px;
+  width: 50px;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+.square-button:disabled {
+  background-color: #0077cc;
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
+.copy-image {
+  width: 30px;
+  height: 30px;
+}
+
+#copy-notification {
+  display: none;
+  position: fixed;
+  bottom: -50px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: black;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 20px;
+  font-size: 16px;
+  opacity: 0;
+  transition: bottom 0.5s ease, opacity 1s ease;
+  z-index: 1000;
+}
+
+#copy-notification.show {
+  display: block;
+  bottom: 10%;
+  opacity: 1;
+}
+
+@media (max-width: 768px) {
+  #friends-content {
+      top: 5%;
+      padding-bottom: 100px;
+  }
+
+  .long-button {
+      width: 80%;
+      font-size: 16px;
+  }
+
+  .square-button {
+      width: 45px;
+      height: 45px;
+  }
+
+  .copy-image {
+      width: 25px;
+      height: 25px;
+  }
+}
+
+img, button, * {
+  outline: none;
+  -webkit-tap-highlight-color: transparent;
+  -webkit-user-select: none;
+  user-select: none;
+}

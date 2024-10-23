@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../css/tab-friend.css">
+</head>
+<body>
+    <div id="friends-content">
+        <h1>Позовите друзей!</h1>
+        <p>Вы и ваши друзья получите приятные бонусы.</p>
+        
+        <div class="invite-container">   
+            <div class="invite-box">
+                <img src="../Images/friends-img/gift-icon.webp" alt="Gift" class="gift-image">
+                <div class="invite-text">
+                    <p class="invite-title">Invite friends</p>
+                    <p class="invite-bonus">
+                        <img src="../Images/index/people_img.webp" alt="People" class="people-icon">
+                        <span class="bonus-amount">+5,000</span> For you and your Friends
+                    </p>
+                </div>
+            </div>
+        </div>
+    
+        <div class="extra-buttons">
+            <!-- Кнопка для отправки приглашения по Телеграм -->
+            <a href="https://t.me/share/url?url=https://t.me/ldfbhuibf_bot Привет! Присоединяйся ко мне в этом приложении и получай бонусы!" target="_blank">
+                <button class="long-button">
+                    Invite friends
+                    <img src="../Images/friends-img/invite-img.webp" alt="Invite" class="invite-icon">
+                </button>
+            </a>
+    
+            <!-- Кнопка для копирования реферальной ссылки -->
+            <button id="copy-button" class="long-button">
+                Copy Referral Link
+                <img src="../Images/friends-img/invite-img.webp" alt="Copy" class="invite-icon">
+            </button>
+        </div>
+    
+        <!-- Оповещение о копировании -->
+        <div id="copy-notification">Ссылка скопирована!</div>
+    </div>
+    
+    
+    <script src="../js/tab-friend.js"></script>
+</body>
+</html>
