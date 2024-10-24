@@ -71,46 +71,63 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 document.addEventListener('DOMContentLoaded', () => {
-    const copyButton = document.getElementById('copy-button');
-    const copyNotification = document.getElementById('copy-notification');
-    const friendsList = document.getElementById('friends-list');
-    const referralLinkElement = document.getElementById('referral-link');
+    const referralListElement = document.getElementById('referral-list');
+    const collectRewardButton = document.getElementById('collect-reward-button');
+    
+    // Инициализация WebApp для получения данных о пользователе
+    window.Telegram.WebApp.ready();
 
-    // Получение реферального кода с сервера
-    const userId = getUserId();  // Получите ID пользователя (замените на реальный метод)
-    let referralCode = '';
+    const userId = getTelegramUserId(); // Получаем user_id из WebApp
+    
+    // Получаем список рефералов и их вознаграждения
+    function loadReferrals() {
+        fetch(`/get_referrals?user_id=${userId}`)
+            .then(response => response.json())
+            .then(data => {
+                referralListElement.innerHTML = ''; // Очищаем список
+                data.referrals.forEach(referral => {
+                    const listItem = document.createElement('li');
+                    listItem.textContent = `Реферал: ${referral.user_id}, Награда: ${referral.reward_pending} монет`;
+                    referralListElement.appendChild(listItem);
+                });
+            })
+            .catch(error => console.error('Ошибка при загрузке рефералов:', error));
+    }
 
-    // Запрос на получение реферального кода с сервера
-    fetch(`/get_referral_code?user_id=${userId}`)
+    // Обрабатываем нажатие на кнопку "Забрать вознаграждение"
+    collectRewardButton.addEventListener('click', () => {
+        fetch('/collect_reward', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({
+                user_id: userId
+            })
+        })
         .then(response => response.json())
         .then(data => {
-            referralCode = data.referral_code;
-            const referralLink = `https://t.me/ldfbhuibf_bot/?ref=${referralCode}`;
-            referralLinkElement.textContent = referralLink;
-        });
-
-    // Копирование ссылки в буфер обмена
-    copyButton.addEventListener('click', () => {
-        const referralLink = referralLinkElement.textContent;
-        navigator.clipboard.writeText(referralLink).then(() => {
-            copyNotification.classList.add('show');
-            setTimeout(() => {
-                copyNotification.classList.remove('show');
-            }, 2000);
-        }).catch(err => {
-            console.error('Ошибка при копировании: ', err);
-        });
+            alert(data.message);
+            loadReferrals(); // Обновляем список рефералов
+        })
+        .catch(error => console.error('Ошибка при сборе вознаграждения:', error));
     });
 
-    // Получение списка приглашённых друзей с сервера
-    fetch('/get_invited_friends?user_id=' + userId)
-        .then(response => response.json())
-        .then(data => {
-            data.invited_friends.forEach(friend => {
-                const li = document.createElement('li');
-                li.textContent = `${friend.name} - Присоединился: ${friend.date}, Бонус: ${friend.bonus}`;
-                friendsList.appendChild(li);
-            });
-        });
+    // Инициализируем загрузку списка рефералов при загрузке страницы
+    loadReferrals();
 });
+
+function getTelegramUserId() {
+    // Используем данные из WebApp для получения информации о пользователе
+    const initDataUnsafe = window.Telegram.WebApp.initDataUnsafe;
+    
+    if (initDataUnsafe && initDataUnsafe.user && initDataUnsafe.user.id) {
+        return initDataUnsafe.user.id; // Возвращаем user_id пользователя из Телеграма
+    } else {
+        console.error("Не удалось получить данные пользователя из Telegram WebApp");
+        return null; // Обрабатываем случай, если данные пользователя не найдены
+    }
+}
+
+
 
