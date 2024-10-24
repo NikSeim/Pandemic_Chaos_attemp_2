@@ -3,6 +3,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const copyButton = document.getElementById('copy-button');
     const copyNotification = document.getElementById('copy-notification');
     const referralLinkElement = document.getElementById('referral-link');
+    const referralLinkDisplay = document.getElementById('referral-link-display'); // Новый элемент для отображения ссылки
     const friendsList = document.getElementById('friends-list');
     const referralListElement = document.getElementById('referral-list');
     const collectRewardButton = document.getElementById('collect-reward-button');
@@ -11,36 +12,41 @@ document.addEventListener('DOMContentLoaded', () => {
     // Инициализация WebApp для Телеграма
     window.Telegram.WebApp.ready();
 
-    // Логика копирования реферальной ссылки
+    // Логика копирования реферальной ссылки и вывода её под кнопкой и в консоль
     function loadReferralLink() {
         fetch(`/get_referral_code?user_id=${userId}`)
-            .then(response => response.json())
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error(`Ошибка при получении реферального кода: ${response.statusText}`);
+                }
+                return response.json();
+            })
             .then(data => {
                 const referralCode = data.referral_code;  // Получаем реферальный код с сервера
                 const referralLink = `https://t.me/ldfbhuibf_bot?start=${referralCode}`;  // Динамически создаем ссылку
-                referralLinkElement.textContent = referralLink;  // Показываем ссылку в элементе на странице
+                
+                // Показываем ссылку в элементе на странице
+                referralLinkElement.textContent = referralLink;
                 referralLinkElement.href = referralLink;  // Устанавливаем ссылку для клика
 
-                // Копирование ссылки при нажатии на кнопку
-                copyButton.addEventListener('click', () => {
-                    navigator.clipboard.writeText(referralLink).then(() => {
-                        // Показываем уведомление о копировании
-                        copyNotification.classList.add('show');
-                        setTimeout(() => {
-                            copyNotification.classList.remove('show');
-                        }, 2000); // Скрываем через 2 секунды
-                    }).catch(err => {
-                        console.error('Ошибка при копировании: ', err);
-                    });
-                });
+                // Выводим ссылку под кнопкой
+                referralLinkDisplay.textContent = `Ваша реферальная ссылка: ${referralLink}`;
+
+                // Выводим ссылку в консоль
+                console.log(`Реферальная ссылка: ${referralLink}`);
             })
-            .catch(error => console.error('Ошибка при получении реферального кода:', error));
+            .catch(error => console.error(error));
     }
 
     // Функция для загрузки списка друзей с сервера
     function loadFriendsList() {
         fetch(`/get_referrals?user_id=${userId}`)
-            .then(response => response.json())
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error(`Ошибка при загрузке списка друзей: ${response.statusText}`);
+                }
+                return response.json();
+            })
             .then(data => {
                 friendsList.innerHTML = '';  // Очищаем список перед обновлением
                 data.referrals.forEach(friend => {
@@ -49,13 +55,18 @@ document.addEventListener('DOMContentLoaded', () => {
                     friendsList.appendChild(li);
                 });
             })
-            .catch(error => console.error('Ошибка при загрузке списка друзей:', error));
+            .catch(error => console.error(error));
     }
 
     // Функция для загрузки рефералов и их вознаграждений
     function loadReferrals() {
         fetch(`/get_referrals?user_id=${userId}`)
-            .then(response => response.json())
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error(`Ошибка при загрузке рефералов: ${response.statusText}`);
+                }
+                return response.json();
+            })
             .then(data => {
                 referralListElement.innerHTML = ''; // Очищаем список
                 data.referrals.forEach(referral => {
@@ -64,7 +75,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     referralListElement.appendChild(listItem);
                 });
             })
-            .catch(error => console.error('Ошибка при загрузке рефералов:', error));
+            .catch(error => console.error(error));
     }
 
     // Обрабатываем нажатие на кнопку "Забрать вознаграждение"
